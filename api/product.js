@@ -26,7 +26,7 @@ router.get('/search', async (req, res) => {
   console.log(keySearch);
   try {
     //db.users.findOne({"trade_item_description" : {$regex : "לחם"}});
-    let doc = await Product.find({trade_item_description : new RegExp(keySearch,"i")},(err,data)=>{
+    let doc = await Product.find({trade_item_description : new RegExp('^', keySearch)},(err,data)=>{
       if (err) {
         console.log(err);
         
