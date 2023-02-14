@@ -26,13 +26,13 @@ router.get('/search', async (req, res) => {
   console.log(keySearch);
   try {
     //db.users.findOne({"trade_item_description" : {$regex : "לחם"}});
-    let doc = await Product.find({trade_item_description : new RegExp(keySearch)},(err,data)=>{
+    let doc = await Product.find({trade_item_description : new RegExp(keySearch,"i")},(err,data)=>{
       if (err) {
         console.log(err);
-        
+
       }
       else if(data){
-      
+
         console.log("data",data.length);
 
       }
