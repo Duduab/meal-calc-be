@@ -26,7 +26,7 @@ router.get('/search', async (req, res) => {
   console.log(keySearch);
   try {
     //db.users.findOne({"trade_item_description" : {$regex : "לחם"}});
-    let doc = await Product.find({trade_item_description : new RegExp('^', keySearch)},(err,data)=>{
+    let doc = await Product.find({trade_item_description : new RegExp(keySearch)},(err,data)=>{
       if (err) {
         console.log(err);
         
@@ -48,7 +48,7 @@ router.get('/search', async (req, res) => {
 });
 router.put('/products-update', async (req, res) => {
   const filter = { _id: req.params.animalId };
-  const {intervalTime,} = req.body
+  const {intervalTime} = req.body
   try {
     //
     const d = new Product()
