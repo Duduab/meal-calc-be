@@ -5,10 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "ng build --prod",
-    "start": "node ./server.js",
-    "build": "ng build",
-    "e2e": "ng e2e"
+    "start": "node ./server.js"
   },
   "engines": {
     "node": "18.12.0"
